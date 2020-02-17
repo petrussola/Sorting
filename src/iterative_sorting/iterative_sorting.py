@@ -18,23 +18,19 @@ def selection_sort(arr):
         smallest_index = cur_index
     return arr
 
-
-def sel_sort(list):
-    cur_index = 0
-    # smallest_index = cur_index
-    for i in range(cur_index, len(list) - 1):
-        for j in range(cur_index + 1, len(list) - 1):
-            if list[j] < list[i]:
-                temp = list[j]
-                del list[j]
-                list.insert(0, temp)
-    return list
-
 # TO-DO:  implement the Bubble Sort function below
 
 
 def bubble_sort(arr):
-
+    has_swapped = True
+    while has_swapped:
+        has_swapped = False
+        for i in range(0, len(arr) - 1):
+            if arr[i] > arr[i + 1]:
+                temp = arr[i]
+                arr[i] = arr[i + 1]
+                arr[i + 1] = temp
+                has_swapped = True
     return arr
 
 
