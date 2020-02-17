@@ -1,29 +1,13 @@
-test = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
+test = [4, 2, 2, 8, 3, 3, 1]
 
 
-# def test_list(list, index):
-#     temp = list[index]
-#     del list[index]
-#     list.insert(0, temp)
-#     return list
+def count_sort(arr):
+    max_value = max(arr)
+    len_count_list = max_value + 1
+    count_list = [0] * len_count_list
+    for i in range(0, len(arr)):
+        count_list[arr[i]] += 1
+    return count_list
 
 
-# print(test_list(test, 2))
-
-def sel_sort(list):
-    cur_index = 0
-    smallest_index = cur_index
-    for i in range(cur_index, len(list) - 1):
-        for j in range(cur_index + 1, len(list)):
-            if list[j] < list[smallest_index]:
-                smallest_index = j
-        temp_low = list[smallest_index]
-        list[smallest_index] = list[cur_index]
-        list[cur_index] = temp_low
-        # list.insert(cur_index, temp)
-        cur_index += 1
-        smallest_index = cur_index
-    return list
-
-
-print(sel_sort(test))
+print(count_sort(test))
