@@ -27,9 +27,12 @@ def bubble_sort(arr):
         has_swapped = False
         for i in range(0, len(arr) - 1):
             if arr[i] > arr[i + 1]:
-                temp = arr[i]
-                arr[i] = arr[i + 1]
-                arr[i + 1] = temp
+                # old code
+                # temp = arr[i]
+                # arr[i] = arr[i + 1]
+                # arr[i + 1] = temp
+                # new code
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
                 has_swapped = True
     return arr
 
